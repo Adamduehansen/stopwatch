@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "description": "A stopwatch module with supscription events",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "Test": "jest"
   },
   "author": {
     "name": "Adam Due Hansen",
     "email": "adamduehan@gmail.com"
   },
   "devDependencies": {
+    "@types/jest": "^25.1.3",
     "clean-webpack-plugin": "^3.0.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",

@@ -1,0 +1,12 @@
+{
+  "name": "stopwatch",
+  "version": "0.1.0",
+  "description": "A stopwatch module with supscription events",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Adam Due Hansen",
+    "email": "adamduehan@gmail.com"
+  }
+}

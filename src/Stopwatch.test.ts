@@ -1,7 +1,8 @@
-import { Stopwatch } from "./Stopwatch";
+/* global describe test expect */
+import { Stopwatch } from './Stopwatch';
 
-describe("Stopwatch", () => {
-  test("should create new instance", () => {
+describe('Stopwatch', () => {
+  test('should create new instance', () => {
     // Arrange
     const stopwatch = new Stopwatch();
 

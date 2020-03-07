@@ -20,7 +20,10 @@ export class Stopwatch {
     return typeof this._intervalId !== 'undefined';
   }
 
-  public constructor(public readonly timeout: number) {}
+  public constructor(
+    public readonly timeout: number,
+    private _maxTicks: number | undefined = undefined
+  ) {}
 
   /**
    * Starts the timer.
@@ -35,6 +38,7 @@ export class Stopwatch {
    */
   public stop() {
     clearInterval(this._intervalId);
+    this._intervalId = undefined;
   }
 
   /**
@@ -47,11 +51,20 @@ export class Stopwatch {
 
   @Autobind
   private tick() {
+    this._numberOfTicks += 1;
+
     this._subscriptions.forEach(
       subscription => subscription({
-        numberOfTicks: 0,
+        numberOfTicks: this._numberOfTicks,
         stopwatch: this
       })
     );
+
+    if (
+      typeof this._maxTicks !== 'undefined' &&
+      this._numberOfTicks >= this._maxTicks
+    ) {
+      this.stop();
+    }
   }
 }

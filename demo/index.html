@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch demo</title>
+  <script defer src="../build/stopwatch.js"></script>
+</head>
+<body>
+  <h1>Stopwatch</h1>
+  <p></p>
+
+  <script>
+    window.onload = function() {
+      var paragraph = document.querySelector("p");
+      var stopwatch = new Stopwatch.Stopwatch(1000);
+      stopwatch.subscribe(callback => paragraph.innerText = `Elapsed seconds: ${callback.numberOfTicks}`);
+      stopwatch.start();
+    }
+  </script>
+
+</body>
+</html>

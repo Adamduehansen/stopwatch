@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, 'src', 'Stopwatch.ts"'),
+  entry: path.join(__dirname, 'src', 'Stopwatch.ts'),
   module: {
     rules: [
       {
@@ -20,6 +20,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'stopwatch.js'
+    filename: 'stopwatch.js',
+    library: 'Stopwatch'
   }
 };
